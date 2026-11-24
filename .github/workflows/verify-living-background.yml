@@ -1,0 +1,36 @@
+name: Atlas Motion verification
+on:
+  pull_request:
+  push:
+    branches: [main, 'feat/living-background-standby']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node tests/living-background.test.mjs
+      - run: node --check public/living-background.js && node --check public/screen.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-living-background-v1
+          path: public/
+
+      - name: Browser smoke and screenshots (QA only; no app dependencies)
+        run: |
+          npm install --prefix "$RUNNER_TEMP/atlas-qa" --no-save --no-audit --no-fund playwright-core@1.56.1
+          export ATLAS_PLAYWRIGHT_MODULE="$RUNNER_TEMP/atlas-qa/node_modules/playwright-core"
+          export ATLAS_CHROME="$(command -v google-chrome || command -v chromium)"
+          test -n "$ATLAS_CHROME"
+          node tests/browser.test.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-living-background-screenshots
+          path: evidence/
+          if-no-files-found: ignore
