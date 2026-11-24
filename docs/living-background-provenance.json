@@ -1,0 +1,35 @@
+{
+  "id": "atlas-motion/living-background",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_CANDIDATE_SHARED_MOTION",
+  "source": {
+    "repo": "AtlasHub-Si/AtlasHub.SI-WebSite",
+    "commit": "df12c5b06b6793ef44cc06e486648f9ac399e5a7",
+    "particleBlob": "70e86a0613e25276ededda289d2b731350bb26a2",
+    "heroBlob": "9dc48d500f94baf57ce53374d62ef339826bf597"
+  },
+  "assets": [
+    {
+      "path": "assets/hero-earth.webp",
+      "source": "public/v2/scenes/hero-earth.webp",
+      "gitBlob": "6a38c2e8932d335e048f622fe9fddf3bbd6b779d",
+      "bytes": 143422,
+      "sha256": "94131002024cb2016043ad767e75f668750c378b62c102048003f6967d51d3bf"
+    },
+    {
+      "path": "assets/hero-cosmos.webp",
+      "source": "public/v2/scenes/hero-cosmos.webp",
+      "gitBlob": "886c6f3af1cfa109bc87334c3396ab5476db263a",
+      "bytes": 25902,
+      "sha256": "fdd533c35d11181af45e2ff99399e98ca74727e340519cc2e70eebeaf0ddf084"
+    }
+  ],
+  "scope": "Internal Atlas ecosystem; standalone Command Center holding screen authorized by owner request; no logo/master approval or third-party license grant",
+  "adaptations": [
+    "Black full-viewport background; original Earth still image and original cosmos still image",
+    "Original Canvas 2D wave and spring mechanics, optional pulse and no editorial fade by default",
+    "React-free mount API, system reduced motion, visibility and cleanup",
+    "Original horizon framing adapted to viewport; not a rotating 3D globe"
+  ],
+  "consumer": "AtlasHub-Si/AtlasHub-Command-Center"
+}

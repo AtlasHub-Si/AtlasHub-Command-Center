@@ -59,3 +59,7 @@ The internal AtlasHQ environment may later provide a foundation for separately p
 ---
 
 *AtlasHub — Augmented Enterprise · Unified Intelligence*
+
+## Temporary living standby screen (v1.0.0)
+
+The root web page is a text-free, fullscreen black Earth/cosmos and live particles scene while the Command Center is being developed. It has no authentication, operational data, analytics or service calls. Source: Atlas Brand System / Atlas Motion (shared/motion/living-background). See [provenance](docs/living-background-provenance.json). Open public/index.html locally or import this repository into Vercel with Framework **Other**, root `.` and output `public`, no install/build command or environment variables required. Space toggles motion; OS reduced motion takes precedence; F11 browser fullscreen. The project architecture above remains unchanged. No domain is configured by this commit.
